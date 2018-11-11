@@ -1,7 +1,7 @@
 # Notes
 
 ## About 
-This is just a simple note app.
+This is just a simple artist/venue booking app.
 
 
 ## Demo
