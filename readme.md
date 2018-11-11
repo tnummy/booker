@@ -1,4 +1,4 @@
-# Notes
+# Booker
 
 ## About 
 This is just a simple artist/venue booking app.
