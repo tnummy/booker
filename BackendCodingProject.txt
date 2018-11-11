@@ -1,0 +1,97 @@
+Project
+--------------
+To demonstrate your coding competency, you'll be creating a very small note
+management system. There are some opportunities for creativity in the project
+outlined below, so please use this project to put your best face forward and
+show us the quality of work that you'd contribute if you were working on our
+product.
+
+Instructions
+--------------
+Create a simple sign in page that allows an email and password to be submitted
+for verification.  If incorrect credentials are provided, then display an
+error message indicating this. Upon successful login, a session should be
+established, and the user should be routed to a dashboard in which they
+can manage a list of personal notes.
+
+On the notes page, a user should be able to create, retrieve, update
+and delete individual notes associated with their account. The structure of the
+note dashboard is as follows:
+
+[ +New Note ] [ Logout ]
+
+This is a Note Title (created by Joe User, Fri 12:00) [ edit / delete ]
+This is the note body.
+
+This is another Note Title (created by Joe User, Fri 11:30) [ edit / delete ]
+This is another note body.
+...
+
+Spend some time making the interface look nice (to the best of your ability)
+and try to write well structured HTML, CSS and PHP so that we can get a feel
+for your skill level.
+
+Interactions with notes can be managed via a small API (Ajax) or if you prefer,
+you can set up individual controller methods/views or use modal windows, etc. The
+implementation is up to you. Go with whatever strategy you think makes the most
+sense, and use the same techniques you would typically use inside a production
+project and keep basic security practices in mind.
+
+At minimum, you'll need to set up a route for signing in, a route for
+displaying the dashboard, and a route for signing out.
+
+Notes should be retrieved with an owner_id taken into consideration. They should
+be created with ownership associated with the user that's currently logged in.
+
+The credentials stored in the DB should be encrypted using PHP's password_hash()
+function.
+
+You do not need to create a user management screen or any tools for account creation.
+For the purpose of this project, you can just include a SQL statement to create a
+default account (include this in your instructions in README.md).
+
+Add some middleware to ensure the user is authenticated. Create a user controller,
+a notes controller, and views corresponding to the pages mentioned earlier in
+this document. Edit the auth view and work within the Lumen framework to complete
+this task.
+
+Please start out with the documentation here:
+http://lumen.laravel.com/docs/routing
+
+Add documentation to your project as you see fit. Please include a README.md file
+in your project root describing the steps required for us to test your project.
+When you are finished with your project, please upload it to Github and send
+an email.
+
+Below is some information and the set up to help ease starting off. Good luck
+and have fun with the project!
+
+Details
+-------
+MySQL Database: c1
+MySQL Table: users
+
+Schema for `users`:
+CREATE TABLE `users` (
+  `id` bigint(64) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+Current data for `users`:
+*************************** 1. row ***************************
+        id: 1
+      name: test
+     email: test@test.com
+  password: $2y$10$Q7hi.IQlFFY3A96BJveDtOPQ9Nf40i2Vf4QV0g8IoDYA8RZtgTD06
+updated_at: 2015-10-12 02:40:15
+created_at: 2015-10-12 02:40:15
+
+Schema for `notes`:
+*************************** 1. row ***************************
+You create this ;-)
